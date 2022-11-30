@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var myString = "namaste"
-    @State private var filled = 1.0
-    @State private var up = true
+    @State private var myString = ""
+    @State private var imageName = ""
+
+//    @State private var filled = 1.0
+//    @State private var up = true
+//
+//    @State private var bgColor = Color("SkyBlue")
     
-    @State private var bgColor = Color("SkyBlue")
     
     var body: some View {
         ZStack {
@@ -26,17 +29,25 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Spacer()
-                Image(systemName: "touchid", variableValue: filled)
+                Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .symbolRenderingMode(.multicolor)
-                //                    .background(Color.teal.opacity(0.5))
-                    .clipShape(Circle())
-                    .shadow(color: .gray, radius: 30, x: 10, y: 10)
-                //                    .foregroundColor(.pink)
-                    .padding(.bottom, 40)
-                    .padding(.horizontal,20)
+//                    .frame(width: 300 , height: 300)
+                    .cornerRadius(30)
+                    .padding()
+                    .shadow(radius: 30, x: 5, y: 5)
+                
+                Spacer()
+//                Image(systemName: "touchid", variableValue: filled)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .symbolRenderingMode(.multicolor)
+//                //                    .background(Color.teal.opacity(0.5))
+//                    .clipShape(Circle())
+//                    .shadow(color: .gray, radius: 30, x: 10, y: 10)
+//                //                    .foregroundColor(.pink)
+//                    .padding(.bottom, 40)
+//                    .padding(.horizontal,20)
                 
                 Group{
                     Text(myString)
@@ -50,20 +61,27 @@ struct ContentView: View {
                 Spacer()
                 
                 Button("Show Message"){
-                    if up {
-                        filled = filled + 0.2
-                        if filled > 1 {
-                            up = false
-                        }
-                    } else {
-                        filled = filled - 0.2
-                        if filled < 0 {
-                            filled = 0
-                            up = true
-                        }
-                    }
+                    let image1 = "image1"
+                    let image2 = "image2"
+                    
+                    let message1 = "namaste"
+                    let message2 = "I'm Britney, Bitch"
+                    
+//                    if up {
+//                        filled = filled + 0.2
+//                        if filled > 1 {
+//                            up = false
+//                        }
+//                    } else {
+//                        filled = filled - 0.2
+//                        if filled < 0 {
+//                            filled = 0
+//                            up = true
+//                        }
+//                    }
 
-                    myString = (myString == "namaste" ? "I'm Britney, Bitch" : "namaste")
+                    imageName = (imageName == image2 ? image1 : image2)
+                    myString = (myString == message1 ? message2 : message1)
                 }
                 .buttonStyle(.borderedProminent)
             }
