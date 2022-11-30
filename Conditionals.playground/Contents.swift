@@ -17,23 +17,35 @@ import UIKit
 //}
 
 
-var person = "Limor"
+//var person = "Limor"
+//
+//switch person {
+//case "Limor":
+//    print("hello Lady Ada")
+//case "Grace":
+//    print("hello Admiral Hopper")
+//case "Beyoncé":
+//    print("All hail Queen B")
+//default:
+//    print("Hello there, \(person)")
+//}
+//
+//
+////Ternary Operator
+//
+//let result = (person == "Limor" ? "Hello Lady Ada" : "Hello There \(person)" )
+//print(result)
+//
+//print(person == "Limor" ? "Hello Lady Ada" : "Hello there \(person)")
 
-switch person {
-case "Limor":
-    print("hello Lady Ada")
-case "Grace":
-    print("hello Admiral Hopper")
-case "Beyoncé":
-    print("All hail Queen B")
-default:
-    print("Hello there, \(person)")
-}
 
 
-//Ternary Operator
+var myNum = 0.0
+var myString = ""
 
-let result = (person == "Limor" ? "Hello Lady Ada" : "Hello There \(person)" )
-print(result)
+var imageNumber = 0
+var imageName = ""
 
-print(person == "Limor" ? "Hello Lady Ada" : "Hello there \(person)")
+print("image" + String(imageNumber))
+
+print("image\(imageNumber)")

@@ -11,11 +11,8 @@ struct ContentView: View {
     
     @State private var myString = ""
     @State private var imageName = ""
-
-//    @State private var filled = 1.0
-//    @State private var up = true
-//
-//    @State private var bgColor = Color("SkyBlue")
+    
+    @State private var imageNumber = 0
     
     
     var body: some View {
@@ -38,50 +35,27 @@ struct ContentView: View {
                     .shadow(radius: 30, x: 5, y: 5)
                 
                 Spacer()
-//                Image(systemName: "touchid", variableValue: filled)
-//                    .resizable()
-//                    .scaledToFit()
-//                    .symbolRenderingMode(.multicolor)
-//                //                    .background(Color.teal.opacity(0.5))
-//                    .clipShape(Circle())
-//                    .shadow(color: .gray, radius: 30, x: 10, y: 10)
-//                //                    .foregroundColor(.pink)
-//                    .padding(.bottom, 40)
-//                    .padding(.horizontal,20)
-                
-                Group{
-                    Text(myString)
-//                    Text(String(filled))
-                }
-                .font(.largeTitle)
-                .foregroundColor(.pink)
-                .fontWeight(.bold)
-                .padding()
+                Text(myString)
+                    .font(.largeTitle)
+                    .foregroundColor(.pink)
+                    .fontWeight(.bold)
+                    .padding()
                 
                 Spacer()
                 
                 Button("Show Message"){
-                    let image1 = "image1"
-                    let image2 = "image2"
-                    
                     let message1 = "namaste"
                     let message2 = "I'm Britney, Bitch"
                     
-//                    if up {
-//                        filled = filled + 0.2
-//                        if filled > 1 {
-//                            up = false
-//                        }
-//                    } else {
-//                        filled = filled - 0.2
-//                        if filled < 0 {
-//                            filled = 0
-//                            up = true
-//                        }
-//                    }
-
-                    imageName = (imageName == image2 ? image1 : image2)
                     myString = (myString == message1 ? message2 : message1)
+                    
+                    
+                    //TODO: loop imageNumber from 9 to 0
+                    imageNumber += 1
+                    imageNumber = (imageNumber > 9 ? 0 : imageNumber)
+                    imageName = "image\(imageNumber)"
+                    
+                    print(imageNumber)
                 }
                 .buttonStyle(.borderedProminent)
             }
