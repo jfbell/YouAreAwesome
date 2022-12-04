@@ -14,6 +14,13 @@ struct ContentView: View {
     
     @State private var imageNumber = 0
     
+    @State private var messageIndex = 0
+    @State private var messages:[String] = ["namaste", "I'm Britney, Bitch", "some platitude", "fabulous"]
+    
+    @State private var count = 0
+    
+    
+    
     
     var body: some View {
         ZStack {
@@ -44,10 +51,10 @@ struct ContentView: View {
                 Spacer()
                 
                 Button("Show Message"){
-                    let message1 = "namaste"
-                    let message2 = "I'm Britney, Bitch"
+                    messageIndex += 1
+                    messageIndex = (messageIndex == messages.count ? 0 : messageIndex)
                     
-                    myString = (myString == message1 ? message2 : message1)
+                    myString = messages[messageIndex]
                     
                     
                     //TODO: loop imageNumber from 9 to 0
@@ -55,7 +62,17 @@ struct ContentView: View {
                     imageNumber = (imageNumber > 9 ? 0 : imageNumber)
                     imageName = "image\(imageNumber)"
                     
+//                    for item in arrayOfSomething {
+//
+//                    }
                     print(imageNumber)
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Button("Append message"){
+                    
+                    messages.append("Another message number: \(count)")
+                    count += 1
                 }
                 .buttonStyle(.borderedProminent)
             }

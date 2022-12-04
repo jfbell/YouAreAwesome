@@ -39,13 +39,39 @@ import UIKit
 //print(person == "Limor" ? "Hello Lady Ada" : "Hello there \(person)")
 
 
+//
+//var myNum = 0.0
+//var myString = ""
+//
+//var imageNumber = 0
+//var imageName = ""
+//
+//print("image" + String(imageNumber))
+//
+//print("image\(imageNumber)")
 
-var myNum = 0.0
-var myString = ""
 
-var imageNumber = 0
-var imageName = ""
+var messages = ["you are awesome",
+"You are great", "fabulous"]
 
-print("image" + String(imageNumber))
+for message in messages {
+    print(message)
+}
 
-print("image\(imageNumber)")
+messages.count
+messages.capacity
+
+print(messages[messages.count-1])
+
+messages.append("fantastic")
+
+messages = messages + ["You Swifty", "code monster"]
+
+messages.insert("you are skilled", at: 1)
+
+print("")
+for message in messages {
+    print(message)
+}
+
+var grades:[Double] = []
